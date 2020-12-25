@@ -2,7 +2,7 @@ const pool = require('../../db/db');
 
 module.exports = {
     async getEmployee(req, res) {
-        let selectQuery = 'SELECT * ';
+        let selectQuery = 'SELECT id, fname, lname, cname, address ';
         selectQuery += 'FROM employee';
 
         pool.query(selectQuery)
@@ -18,7 +18,7 @@ module.exports = {
     async singleEmployee(req, res) {
         const { id } = req.params;
     
-        let selectQuery = ' SELECT * ';
+        let selectQuery = ' SELECT id, fname, lname, cname, address';
         selectQuery += ' FROM employee WHERE id=? ';
     
         pool.query(selectQuery, [id])

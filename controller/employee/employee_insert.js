@@ -8,10 +8,10 @@ module.exports = {
         const cname = req.body.cname;
         const address = req.body.address;
 
-        let insertQuery = 'INSERT INTO `employee` ';
-        insertQuery += '(`id`, `fname`, `lname`, ';
-        insertQuery += '`cname`, `address`) VALUES ';
-        insertQuery += '( ?, ?, ?, ?, ?)';
+        let insertQuery = 'INSERT INTO employee ';
+        insertQuery += '(id, fname, lname, ';
+        insertQuery += 'cname, address) VALUES';
+        insertQuery += ' ( ?, ?, ?, ?, ?)';
         console.log(insertQuery);
 
         pool.query(insertQuery, 
