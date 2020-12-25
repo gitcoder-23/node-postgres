@@ -14,10 +14,10 @@ const pool = new Pool({
       password: process.env.PASSWORD,
       debug: false,
 })
-pool.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  pool.end()
-})
+// pool.query('SELECT NOW()', (err, res) => {
+//   console.log(err, res)
+//   pool.end()
+// })
 const client = new Client({
   connectionLimit: 100,
       host: process.env.DB_HOST,
@@ -27,10 +27,10 @@ const client = new Client({
       debug: false,
 })
 client.connect()
-client.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  client.end()
-})
+// client.query('SELECT NOW()', (err, res) => {
+//   console.log(err, res)
+//   client.end()
+// })
 
 
 
