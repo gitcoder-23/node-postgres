@@ -19,7 +19,7 @@ module.exports = {
         const { id } = req.params;
     
         let selectQuery = ' SELECT id, fname, lname, cname, address';
-        selectQuery += ' FROM employee WHERE id=? ';
+        selectQuery += ' FROM employee WHERE id=$1 ';
     
         pool.query(selectQuery, [id])
           .then((row) => res.send(row))
