@@ -7,14 +7,18 @@ const pool = require('../../db/db');
 module.exports = {
   async putEmployee(req, res) {
     const id = parseInt(req.params.id);
-    const { fname } = req.params;
-    const { lname } = req.params;
-    const { cname } = req.params;
-    const { address } = req.params;
+    const { fname } = req.body;
+    const { lname } = req.body;
+    const { cname } = req.body;
+    const { address } = req.body;
 
 
     const updateQuery = 'UPDATE employee SET fname = $1, lname = $2, cname = $3, address = $4 WHERE id = $5';
 
+    console.log('++++++++++++++++++++++');
+    console.log(req.body.fname, req.body.lname, req.body.cname, req.body.address, req.body.id);
+
+    console.log('++++++++++++++++++++++');
     console.log(updateQuery);
     try {
       await pool.query(updateQuery,
