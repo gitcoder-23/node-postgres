@@ -15,7 +15,7 @@ module.exports = {
     const { address } = req.body;
 
 
-    const updateQuery = 'UPDATE users SET fname = $1, lname = $2, cname = $3, address = $4 WHERE id = $5';
+    const updateQuery = 'UPDATE employee SET fname = $1, lname = $2, cname = $3, address = $4 WHERE id = $5';
 
     console.log(updateQuery);
 
