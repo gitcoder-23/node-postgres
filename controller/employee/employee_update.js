@@ -6,8 +6,6 @@ const pool = require('../../db/db');
 
 module.exports = {
   async putEmployee(req, res) {
-    // const { eid } = req.params.id;
-    // const reqId = parseInt(req.params.id);
     const id = parseInt(req.params.id);
     const { fname } = req.params;
     const { lname } = req.params;
