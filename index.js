@@ -16,6 +16,8 @@ const fileUpload = require('express-fileupload');
 // main catching files are linked
 const route = require('./route');
 
+
+// Server Starter
 function startServer() {
   app.listen(port);
   console.log('\n');
@@ -43,6 +45,8 @@ function initiateFileuploader() {
 function initiateMorgan() {
   app.use(morgan('tiny'));
 }
+
+
 
 function initiateTestRoute() {
   app.get('/', (req, res) => {
